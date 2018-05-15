@@ -1,6 +1,7 @@
 export default {
   route: {
     dashboard: 'Dashboard',
+    news: 'News',
     introduction: 'Introduction',
     documentation: 'Documentation',
     permission: 'Permission',
@@ -101,6 +102,7 @@ export default {
     id: 'ID',
     date: 'Date',
     author: 'Author',
+    cover: 'Cover',
     readings: 'Readings',
     status: 'Status',
     actions: 'Actions',
@@ -108,6 +110,7 @@ export default {
     publish: 'Publish',
     draft: 'Draft',
     delete: 'Delete',
+    view: 'View',
     cancel: 'Cancel',
     confirm: 'Confirm'
   },

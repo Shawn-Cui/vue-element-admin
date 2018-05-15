@@ -1,6 +1,7 @@
 export default {
   route: {
     dashboard: '首页',
+    news: '新闻',
     introduction: '简述',
     documentation: '文档',
     permission: '权限测试页',
@@ -101,6 +102,7 @@ export default {
     id: '序号',
     date: '时间',
     author: '作者',
+    cover: '封面图',
     readings: '阅读数',
     status: '状态',
     actions: '操作',
@@ -108,6 +110,7 @@ export default {
     publish: '发布',
     draft: '草稿',
     delete: '删除',
+    view: '预览',
     cancel: '取 消',
     confirm: '确 定'
   },
