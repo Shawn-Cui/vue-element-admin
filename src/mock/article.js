@@ -10,11 +10,21 @@ for (let i = 0; i < count; i++) {
     timestamp: +Mock.Random.date('T'),
     author: '@first',
     reviewer: '@first',
-    title: '@title(5, 10)',
+    title: '@ctitle(5, 10)',
+    'coverURL|1': [
+      'http://chat-1252042681.cos.ap-shanghai.myqcloud.com/1525973109094.jpeg',
+      'http://chat-1252042681.cos.ap-shanghai.myqcloud.com/1525972781303.png',
+      'http://chat-1252042681.cossh.myqcloud.com/1525847853028.jpg',
+      'http://chat-1252042681.cos.ap-shanghai.myqcloud.com/1526220376684.jpg',
+      'http://chat-1252042681.cos.ap-shanghai.myqcloud.com/1526220767039.jpg',
+      'http://chat-1252042681.cos.ap-shanghai.myqcloud.com/1526220821047.jpg',
+      'http://chat-1252042681.cos.ap-shanghai.myqcloud.com/1526220837528.jpg',
+      'http://chat-1252042681.cos.ap-shanghai.myqcloud.com/1526220925328.jpg'
+    ],
     forecast: '@float(0, 100, 2, 2)',
     importance: '@integer(1, 3)',
     'type|1': ['CN', 'US', 'JP', 'EU'],
-    'status|1': ['published', 'draft', 'deleted'],
+    'status|1': ['published', 'draft'],
     display_time: '@datetime',
     pageviews: '@integer(300, 5000)'
   }))
