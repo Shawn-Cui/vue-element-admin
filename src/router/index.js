@@ -75,6 +75,17 @@ export const asyncRouterMap = [
   },
 
   {
+    path: '/recruit',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: _import('recruit/Index'),
+      name: 'recruit',
+      meta: { title: 'recruit', icon: 'clipboard', noCache: true }
+    }]
+  },
+
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/index',
@@ -250,12 +261,12 @@ export const asyncRouterMap = [
     children: [{ path: 'download', component: _import('zip/index'), name: 'exportZip', meta: { title: 'exportZip' }}]
   },
 
-  {
-    path: '/theme',
-    component: Layout,
-    redirect: 'noredirect',
-    children: [{ path: 'index', component: _import('theme/index'), name: 'theme', meta: { title: 'theme', icon: 'theme' }}]
-  },
+  // {
+  //   path: '/theme',
+  //   component: Layout,
+  //   redirect: 'noredirect',
+  //   children: [{ path: 'index', component: _import('theme/index'), name: 'theme', meta: { title: 'theme', icon: 'theme' }}]
+  // },
 
   {
     path: '/clipboard',
@@ -264,11 +275,11 @@ export const asyncRouterMap = [
     children: [{ path: 'index', component: _import('clipboard/index'), name: 'clipboardDemo', meta: { title: 'clipboardDemo', icon: 'clipboard' }}]
   },
 
-  {
-    path: '/i18n',
-    component: Layout,
-    children: [{ path: 'index', component: _import('i18n-demo/index'), name: 'i18n', meta: { title: 'i18n', icon: 'international' }}]
-  },
+  // {
+  //   path: '/i18n',
+  //   component: Layout,
+  //   children: [{ path: 'index', component: _import('i18n-demo/index'), name: 'i18n', meta: { title: 'i18n', icon: 'international' }}]
+  // },
 
   { path: '*', redirect: '/404', hidden: true }
 ]

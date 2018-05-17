@@ -2,6 +2,7 @@ export default {
   route: {
     dashboard: '首页',
     news: '新闻',
+    recruit: '招聘',
     introduction: '简述',
     documentation: '文档',
     permission: '权限测试页',
@@ -56,7 +57,7 @@ export default {
   navbar: {
     logOut: '退出登录',
     dashboard: '首页',
-    github: '项目地址',
+    // github: '项目地址',
     screenfull: '全屏',
     theme: '换肤'
   },
@@ -99,6 +100,9 @@ export default {
     search: '搜索',
     add: '添加',
     export: '导出',
+    download: '下载简历',
+    job: '岗位',
+    recruitNumber: '招聘人数',
     reviewer: '审核人',
     id: '序号',
     date: '时间',

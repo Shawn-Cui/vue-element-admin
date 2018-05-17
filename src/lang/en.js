@@ -2,6 +2,7 @@ export default {
   route: {
     dashboard: 'Dashboard',
     news: 'News',
+    recruit: 'Recruit',
     introduction: 'Introduction',
     documentation: 'Documentation',
     permission: 'Permission',
@@ -56,7 +57,7 @@ export default {
   navbar: {
     logOut: 'Log Out',
     dashboard: 'Dashboard',
-    github: 'Github',
+    // github: 'Github',
     screenfull: 'screenfull',
     theme: 'theme'
   },
@@ -99,6 +100,9 @@ export default {
     search: 'Search',
     add: 'Add',
     export: 'Export',
+    download: 'Download',
+    job: 'Job',
+    recruitNumber: 'RecruitNumber',
     reviewer: 'reviewer',
     id: 'ID',
     date: 'Date',
