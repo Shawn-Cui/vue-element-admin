@@ -91,6 +91,7 @@ export default {
     dynamicTips2: '不固定表头, 按照点击顺序排序',
     dragTips1: '默认顺序',
     dragTips2: '拖拽后顺序',
+    head: '置顶',
     title: '标题',
     importance: '重要性',
     type: '类型',
