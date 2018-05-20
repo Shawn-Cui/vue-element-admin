@@ -273,14 +273,11 @@ export default {
                   this.addBox = false
                   this.getList()
                   this.$message({ showClose: true, message: '新增新闻成功！', type: 'success' })
-                  // this.$router.push({
-                  //   name: 'news.edit',
-                  //   params: {
-                  //     id: news.id
-                  //   }
-                  // })
                   this.$router.replace({
-                    path: '/form/edit-form'
+                    name: 'news.edit',
+                    params: {
+                      id: news.id
+                    }
                   })
                 } else {
                   this.$message({ showClose: true, message: '新增新闻失败！', type: 'error' })
@@ -354,7 +351,7 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-        const delId = parseInt(row.id)
+        const delId = row.id
         axios.delete('/api/News/' + delId + '/newsContents').then((response) => {
           if (response.status >= 200 && response.status < 300) {
             axios.delete('/api/News/' + delId).then((response) => {
@@ -376,7 +373,10 @@ export default {
     },
     handleUpdate(row) {
       this.$router.replace({
-        path: '/form/edit-form'
+        name: 'news.edit',
+        params: {
+          id: row.id
+        }
       })
     },
     handleDownload() {

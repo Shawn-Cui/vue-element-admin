@@ -42,27 +42,23 @@ export const constantRouterMap = [
       name: 'dashboard',
       meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
     }]
-  // },
-  // {
-  //   path: '/documentation',
-  //   component: Layout,
-  //   redirect: '/documentation/index',
-  //   children: [{
-  //     path: 'index',
-  //     component: _import('documentation/index'),
-  //     name: 'documentation',
-  //     meta: { title: 'documentation', icon: 'documentation', noCache: true }
-  //   }]
   },
   {
     path: '/news',
     component: Layout,
+    redirect: '/news/index',
+    alwaysShow: true, // will always show the root menu
+    meta: {
+      title: 'news',
+      icon: 'clipboard'
+    },
     children: [{
       path: 'index',
       component: _import('news/Index'),
       name: 'news',
       meta: { title: 'news', icon: 'clipboard', noCache: true }
-    }]
+    },
+    { path: 'edit', component: _import('news/edit'), name: 'news.edit', meta: { title: 'editForm', icon: 'table' }}]
   },
 
   {
