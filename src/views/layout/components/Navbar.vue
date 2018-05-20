@@ -73,7 +73,8 @@ export default {
     },
     logout() {
       this.$store.dispatch('LogOut').then(() => {
-        location.reload()// In order to re-instantiate the vue-router object to avoid bugs
+        this.$router.push({ path: '/login' })
+        // location.reload()// In order to re-instantiate the vue-router object to avoid bugs
       })
     }
   }

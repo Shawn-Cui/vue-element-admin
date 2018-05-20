@@ -9,7 +9,7 @@
       text-color="#bfcbd9"
       active-text-color="#409EFF"
     >
-      <sidebar-item :routes="permission_routers"></sidebar-item>
+      <sidebar-item :routes="routes"></sidebar-item>
     </el-menu>
   </el-scrollbar>
 </template>
@@ -17,6 +17,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import SidebarItem from './SidebarItem'
+import { constantRouterMap } from '@/router'
 
 export default {
   components: { SidebarItem },
@@ -27,6 +28,12 @@ export default {
     ]),
     isCollapse() {
       return !this.sidebar.opened
+    }
+  },
+  data() {
+    console.log(constantRouterMap)
+    return {
+      routes: constantRouterMap
     }
   }
 }

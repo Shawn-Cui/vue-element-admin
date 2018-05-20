@@ -48,7 +48,8 @@
 </template>
 
 <script>
-import { isvalidUsername } from '@/utils/validate'
+import axios from 'axios'
+// import { isvalidUsername } from '@/utils/validate'
 import LangSelect from '@/components/LangSelect'
 import SocialSign from './socialsignin'
 
@@ -56,28 +57,32 @@ export default {
   components: { LangSelect, SocialSign },
   name: 'login',
   data() {
-    const validateUsername = (rule, value, callback) => {
-      if (!isvalidUsername(value)) {
-        callback(new Error('Please enter the correct user name'))
-      } else {
-        callback()
-      }
-    }
-    const validatePassword = (rule, value, callback) => {
-      if (value.length < 6) {
-        callback(new Error('The password can not be less than 6 digits'))
-      } else {
-        callback()
-      }
-    }
+    // const validateUsername = (rule, value, callback) => {
+    //   if (!isvalidUsername(value)) {
+    //     callback(new Error('Please enter the correct user name'))
+    //   } else {
+    //     callback()
+    //   }
+    // }
+    // const validatePassword = (rule, value, callback) => {
+    //   if (value.length < 6) {
+    //     callback(new Error('The password can not be less than 6 digits'))
+    //   } else {
+    //     callback()
+    //   }
+    // }
     return {
       loginForm: {
-        username: 'admin',
-        password: '1111111'
+        username: 'Bob',
+        password: 'opensesame'
       },
       loginRules: {
-        username: [{ required: true, trigger: 'blur', validator: validateUsername }],
-        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+        username: [
+          { required: true, message: '用户名不能为空', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '密码不能为空', trigger: 'blur' }
+        ]
       },
       passwordType: 'password',
       loading: false,
@@ -103,35 +108,41 @@ export default {
             this.loading = false
           })
         } else {
-          console.log('error submit!!')
+          this.$message({ showClose: true, message: '您所填写的信息不完整，无法提交！', type: 'warning' })
+          return false
+        }
+      })
+    },
+    async enterSuccess() {
+      this.$refs.loginForm.validate((valid) => {
+        if (valid) {
+          this.loading = true
+          const loginData = {
+            username: this.loginForm.username,
+            password: this.loginForm.password
+          }
+          axios.post('/api/Admins/login', loginData).then((response) => {
+            if (response.status >= 200 && response.status < 300) {
+              console.log(response)
+              localStorage.setItem('BDToken', response.data.id)
+              this.$message({ showClose: true, message: '登录成功！', type: 'success' })
+              this.$router.push({ path: '/' })
+            } else {
+              this.$message({ showClose: true, message: '登录失败！', type: 'error' })
+            }
+          })
+        } else {
+          this.$message({ showClose: true, message: '您所填写的信息不完整，无法提交！', type: 'warning' })
           return false
         }
       })
     },
     afterQRScan() {
-      // const hash = window.location.hash.slice(1)
-      // const hashObj = getQueryObject(hash)
-      // const originUrl = window.location.origin
-      // history.replaceState({}, '', originUrl)
-      // const codeMap = {
-      //   wechat: 'code',
-      //   tencent: 'code'
-      // }
-      // const codeName = hashObj[codeMap[this.auth_type]]
-      // if (!codeName) {
-      //   alert('第三方登录失败')
-      // } else {
-      //   this.$store.dispatch('LoginByThirdparty', codeName).then(() => {
-      //     this.$router.push({ path: '/' })
-      //   })
-      // }
     }
   },
   created() {
-    // window.addEventListener('hashchange', this.afterQRScan)
   },
   destroyed() {
-    // window.removeEventListener('hashchange', this.afterQRScan)
   }
 }
 </script>
