@@ -73,6 +73,17 @@ export const constantRouterMap = [
   },
 
   {
+    path: '/feedback',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: _import('feedback/index'),
+      name: 'feedback',
+      meta: { title: 'feedback', icon: 'clipboard', noCache: true }
+    }]
+  },
+
+  {
     path: '/changePassword',
     component: Layout,
     children: [{

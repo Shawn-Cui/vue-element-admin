@@ -53,7 +53,9 @@ export default {
     theme: 'Theme',
     clipboardDemo: 'Clipboard',
     i18n: 'I18n',
-    changePassword: 'Change Password'
+    changePassword: 'Change Password',
+    feedback: 'Feedback',
+    pageManage: 'Page Manage'
   },
   navbar: {
     logOut: 'Log Out',
@@ -112,6 +114,7 @@ export default {
     cover: 'Cover',
     readings: 'Readings',
     status: 'Status',
+    content: 'Content',
     actions: 'Actions',
     edit: 'Edit',
     publish: 'Publish',

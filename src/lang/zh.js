@@ -53,7 +53,9 @@ export default {
     theme: '换肤',
     clipboardDemo: 'Clipboard',
     i18n: '国际化',
-    changePassword: '修改密码'
+    changePassword: '修改密码',
+    feedback: '信息收集',
+    pageManage: '页面管理'
   },
   navbar: {
     logOut: '退出登录',
@@ -112,6 +114,7 @@ export default {
     cover: '封面图',
     readings: '阅读数',
     status: '状态',
+    content: '内容',
     actions: '操作',
     edit: '编辑',
     publish: '发布',
