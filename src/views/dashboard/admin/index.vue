@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard-editor-container">
-    <github-corner></github-corner>
+    <!-- <github-corner></github-corner> -->
 
-    <panel-group @handleSetLineChartData="handleSetLineChartData"></panel-group>
+    <!-- <panel-group @handleSetLineChartData="handleSetLineChartData"></panel-group>
 
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :chart-data="lineChartData"></line-chart>
@@ -36,21 +36,22 @@
       <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 5}" style="margin-bottom:30px;" >
         <box-card></box-card>
       </el-col>
-    </el-row>
+    </el-row> -->
+    <h1>欢迎来到博郡后台管理系统！</h1>
 
   </div>
 </template>
 
 <script>
-import GithubCorner from '@/components/GithubCorner'
-import PanelGroup from './components/PanelGroup'
-import LineChart from './components/LineChart'
-import RaddarChart from './components/RaddarChart'
-import PieChart from './components/PieChart'
-import BarChart from './components/BarChart'
-import TransactionTable from './components/TransactionTable'
-import TodoList from './components/TodoList'
-import BoxCard from './components/BoxCard'
+// import GithubCorner from '@/components/GithubCorner'
+// import PanelGroup from './components/PanelGroup'
+// import LineChart from './components/LineChart'
+// import RaddarChart from './components/RaddarChart'
+// import PieChart from './components/PieChart'
+// import BarChart from './components/BarChart'
+// import TransactionTable from './components/TransactionTable'
+// import TodoList from './components/TodoList'
+// import BoxCard from './components/BoxCard'
 
 const lineChartData = {
   newVisitis: {
@@ -74,15 +75,15 @@ const lineChartData = {
 export default {
   name: 'dashboard-admin',
   components: {
-    GithubCorner,
-    PanelGroup,
-    LineChart,
-    RaddarChart,
-    PieChart,
-    BarChart,
-    TransactionTable,
-    TodoList,
-    BoxCard
+    // GithubCorner,
+    // PanelGroup,
+    // LineChart,
+    // RaddarChart,
+    // PieChart,
+    // BarChart,
+    // TransactionTable,
+    // TodoList,
+    // BoxCard
   },
   data() {
     return {
@@ -99,8 +100,10 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
 .dashboard-editor-container {
+  text-align: center;
+  margin-top: 120px;
   padding: 32px;
-  background-color: rgb(240, 242, 245);
+  // background-color: rgb(240, 242, 245);
   .chart-wrapper {
     background: #fff;
     padding: 16px 16px 0;
