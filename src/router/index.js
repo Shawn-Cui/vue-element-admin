@@ -70,6 +70,17 @@ export const constantRouterMap = [
       name: 'recruit',
       meta: { title: 'recruit', icon: 'clipboard', noCache: true }
     }]
+  },
+
+  {
+    path: '/changePassword',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: _import('changePassword/index'),
+      name: 'changePassword',
+      meta: { title: 'changePassword', icon: 'clipboard', noCache: true }
+    }]
   }
 ]
 

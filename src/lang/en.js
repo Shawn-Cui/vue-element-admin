@@ -52,7 +52,8 @@ export default {
     exportZip: 'Export Zip',
     theme: 'Theme',
     clipboardDemo: 'Clipboard',
-    i18n: 'I18n'
+    i18n: 'I18n',
+    changePassword: 'Change Password'
   },
   navbar: {
     logOut: 'Log Out',
@@ -68,7 +69,8 @@ export default {
     password: 'Password',
     any: 'any',
     thirdparty: 'Or connect with',
-    thirdpartyTips: 'Can not be simulated on local, so please combine you own business simulation! ! !'
+    thirdpartyTips: 'Can not be simulated on local, so please combine you own business simulation! ! !',
+    changePassword: 'Change Password'
   },
   documentation: {
     documentation: 'Documentation',

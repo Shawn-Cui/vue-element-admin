@@ -52,7 +52,8 @@ export default {
     exportZip: 'Export Zip',
     theme: '换肤',
     clipboardDemo: 'Clipboard',
-    i18n: '国际化'
+    i18n: '国际化',
+    changePassword: '修改密码'
   },
   navbar: {
     logOut: '退出登录',
@@ -68,7 +69,8 @@ export default {
     password: '密码',
     any: '随便填',
     thirdparty: '第三方登录',
-    thirdpartyTips: '本地不能模拟，请结合自己业务进行模拟！！！'
+    thirdpartyTips: '本地不能模拟，请结合自己业务进行模拟！！！',
+    changePassword: '修改密码'
   },
   documentation: {
     documentation: '文档',
