@@ -84,6 +84,17 @@ export const constantRouterMap = [
   },
 
   {
+    path: '/pageManage',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: _import('pageManage/index'),
+      name: 'pageManage',
+      meta: { title: 'pageManage', icon: 'clipboard', noCache: true }
+    }]
+  },
+
+  {
     path: '/changePassword',
     component: Layout,
     children: [{
