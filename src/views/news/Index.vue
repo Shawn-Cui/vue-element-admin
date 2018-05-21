@@ -232,14 +232,7 @@ export default {
       }
       filter.where = search.where
 
-      const res = await axios.get('/api/News?filter=' + encodeURI(JSON.stringify(filter)), {
-        params: {
-          skip: this.localPage * this.msg.pagNumber,
-          limit: this.msg.pagNumber,
-          order: 'dateOfRelease DESC',
-          title: search
-        }
-      })
+      const res = await axios.get('/api/News?filter=' + encodeURI(JSON.stringify(filter)))
       console.log(res)
       this.newsList = res.data
       const totalRes = await axios.get('/api/News/count', {

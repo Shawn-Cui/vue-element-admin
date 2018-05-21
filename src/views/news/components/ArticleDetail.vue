@@ -56,14 +56,14 @@
                   </el-form-item>
                 </el-col>
 
-                <el-col :span="8">
+                <!-- <el-col :span="8">
                   <el-tooltip class="item" effect="dark" content="将替换作者" placement="top">
                     <el-form-item label-width="50px" label="来源:" class="postInfo-container-item">
                       <el-input placeholder="将替换作者" style='min-width:150px;' v-model="postForm.origin">
                       </el-input>
                     </el-form-item>
                   </el-tooltip>
-                </el-col>
+                </el-col> -->
 
                 <el-col :span="8">
                   <el-form-item label-width="80px" label="语言:" class="postInfo-container-item" prop="cn">
