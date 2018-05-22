@@ -151,8 +151,8 @@ export default {
     handleFilter() {
       const filter = {
         where: {
-          title: {
-            like: '%' + this.search + '%'
+          name: {
+            like: this.search
           }
         }
       }
@@ -172,7 +172,7 @@ export default {
       const totalRes = await axios.get('/api/Jobs/count', {
         params: {
           order: 'dateOfRelease DESC',
-          title: search
+          name: search
         }
       })
       this.msg.pagTotal = totalRes.count
