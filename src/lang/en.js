@@ -2,7 +2,7 @@ export default {
   route: {
     dashboard: 'Dashboard',
     news: 'News',
-    recruit: 'Recruit',
+    job: 'Recruit',
     introduction: 'Introduction',
     documentation: 'Documentation',
     permission: 'Permission',
@@ -40,6 +40,8 @@ export default {
     form: 'Form',
     createForm: 'Create Form',
     editForm: 'Edit Form',
+    edit: 'Edit',
+    resume: 'Resume',
     errorPages: 'Error Pages',
     page401: '401',
     page404: '404',
@@ -122,7 +124,10 @@ export default {
     delete: 'Delete',
     view: 'View',
     cancel: 'Cancel',
-    confirm: 'Confirm'
+    confirm: 'Confirm',
+    resume: 'Resume',
+    downloadURL: 'Download URL',
+    tag: 'Tag'
   },
   errorLog: {
     tips: 'Please click the bug icon in the upper right corner',

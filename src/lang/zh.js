@@ -2,7 +2,7 @@ export default {
   route: {
     dashboard: '首页',
     news: '新闻',
-    recruit: '招聘',
+    job: '招聘',
     introduction: '简述',
     documentation: '文档',
     permission: '权限测试页',
@@ -40,6 +40,8 @@ export default {
     form: '表单',
     createForm: '创建表单',
     editForm: '编辑表单',
+    edit: '编辑',
+    resume: '简历',
     errorPages: '错误页面',
     page401: '401',
     page404: '404',
@@ -122,7 +124,10 @@ export default {
     delete: '删除',
     view: '预览',
     cancel: '取 消',
-    confirm: '确 定'
+    confirm: '确 定',
+    resume: '简历',
+    downloadURL: '下载链接',
+    tag: '标签'
   },
   errorLog: {
     tips: '请点击右上角bug小图标',

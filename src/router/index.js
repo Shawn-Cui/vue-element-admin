@@ -58,18 +58,26 @@ export const constantRouterMap = [
       name: 'news',
       meta: { title: 'news', icon: 'clipboard', noCache: true }
     },
-    { path: 'edit', component: _import('news/edit'), name: 'news.edit', meta: { title: 'editForm', icon: 'table' }}]
+    { path: 'edit', component: _import('news/edit'), name: 'news.edit', meta: { title: 'edit', icon: 'table' }}]
   },
 
   {
-    path: '/recruit',
+    path: '/job',
     component: Layout,
+    redirect: '/job/index',
+    alwaysShow: true, // will always show the root menu
+    meta: {
+      title: 'job',
+      icon: 'clipboard'
+    },
     children: [{
       path: 'index',
-      component: _import('recruit/Index'),
-      name: 'recruit',
-      meta: { title: 'recruit', icon: 'clipboard', noCache: true }
-    }]
+      component: _import('job/Index'),
+      name: 'job',
+      meta: { title: 'job', icon: 'clipboard', noCache: true }
+    },
+    { path: 'edit', component: _import('job/edit'), name: 'job.edit', meta: { title: 'edit', icon: 'table' }},
+    { path: 'resume', component: _import('job/resume'), name: 'job.resume', meta: { title: 'resume', icon: 'table' }}]
   },
 
   {
@@ -341,13 +349,13 @@ export const asyncRouterMap = [
 //       }]
 //     },
 //     {
-//       path: '/recruit',
+//       path: '/job',
 //       component: Layout,
 //       children: [{
 //         path: 'index',
-//         component: _import('recruit/Index'),
-//         name: 'recruit',
-//         meta: { title: 'recruit', icon: 'clipboard', noCache: true }
+//         component: _import('job/Index'),
+//         name: 'job',
+//         meta: { title: 'job', icon: 'clipboard', noCache: true }
 //       }]
 //     },
 //     {
