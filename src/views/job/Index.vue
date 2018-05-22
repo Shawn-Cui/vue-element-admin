@@ -5,7 +5,7 @@
       </el-input>
       <el-button class="filter-item" type="primary" v-waves icon="el-icon-search" @click="handleFilter">{{$t('table.search')}}</el-button>
       <el-button class="filter-item" style="margin-left: 10px;" @click="addBox = true" type="primary" icon="el-icon-edit">{{$t('table.add')}}</el-button>
-      <el-button class="filter-item" type="primary" :loading="downloadLoading" v-waves icon="el-icon-download" @click="handleDownload">{{$t('table.download')}}</el-button>
+      <!-- <el-button class="filter-item" type="primary" :loading="downloadLoading" v-waves icon="el-icon-download" @click="handleDownload">{{$t('table.download')}}</el-button> -->
     </div>
 
     <el-table :data="jobList" v-loading="listLoading" element-loading-text="给我一点时间" border fit highlight-current-row
