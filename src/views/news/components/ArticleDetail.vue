@@ -380,7 +380,7 @@ export default {
               console.log(err, '上传失败！')
             }
             me.topCoverURL = url
-            me.news.topCoverURL = url
+            me.postForm.topCoverURL = url
           })
         } else {
           me.$message({ showClose: true, message: '图片尺寸必须为1420*890！', type: 'warning' })

@@ -603,7 +603,7 @@ export default {
       reader.onload = function(evt) {
         const image = new Image()
         image.onload = function() {
-          if (this.width === 1709 && this.height === 390) {
+          if (this.width === 1440 && this.height === 390) {
             upload.uploadHandle(file, 'about-us.png', function(err, url) {
               console.log(err, url)
               if (err) {
@@ -612,7 +612,7 @@ export default {
               me.about = url
             })
           } else {
-            me.$message({ showClose: true, message: '图片尺寸必须为1709*390！', type: 'warning' })
+            me.$message({ showClose: true, message: '图片尺寸必须为1440*390！', type: 'warning' })
           }
         }
         image.src = evt.target.result
@@ -627,7 +627,7 @@ export default {
       reader.onload = function(evt) {
         const image = new Image()
         image.onload = function() {
-          if (this.width === 1709 && this.height === 390) {
+          if (this.width === 1440 && this.height === 390) {
             upload.uploadHandle(file, 'about-usEn.png', function(err, url) {
               console.log(err, url)
               if (err) {
@@ -636,7 +636,7 @@ export default {
               me.aboutEn = url
             })
           } else {
-            me.$message({ showClose: true, message: '图片尺寸必须为1709*390！', type: 'warning' })
+            me.$message({ showClose: true, message: '图片尺寸必须为1440*390！', type: 'warning' })
           }
         }
         image.src = evt.target.result
