@@ -368,7 +368,8 @@ export default {
       const param = {
         id: row.id,
         title: row.title,
-        dateOfRelease: row.dateOfRelease
+        dateOfRelease: row.dateOfRelease,
+        author: row.author
       }
       window.open('http://115.159.86.224/#/newsDetail/' + JSON.stringify(param))
     },

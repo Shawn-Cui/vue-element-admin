@@ -67,8 +67,14 @@
 
                 <el-col :span="8">
                   <el-form-item label-width="80px" label="语言:" class="postInfo-container-item" prop="cn">
-                    <el-checkbox v-model="postForm.cn">中文</el-checkbox>
-                    <el-checkbox v-model="postForm.en">英文</el-checkbox>
+                    <!-- <el-radio v-model="lang" label="cn">中文</el-radio>
+                    <el-radio v-model="lang" label="en">英文</el-radio> -->
+                    <el-radio-group v-model="lang">
+                      <el-radio-button label="中文"></el-radio-button>
+                      <el-radio-button label="英文"></el-radio-button>
+                    </el-radio-group>
+                    <!-- <el-checkbox v-model="postForm.cn">中文</el-checkbox> -->
+                    <!-- <el-checkbox v-model="postForm.en">英文</el-checkbox> -->
                   </el-form-item>
                 </el-col>
               </el-row>
@@ -181,6 +187,7 @@ export default {
     //   }
     // }
     return {
+      lang: '中文',
       coverLoading: false,
       topCoverLoading: false,
       coverURL: '',
@@ -250,6 +257,7 @@ export default {
       this.postForm = data.data
       this.coverURL = data.data.coverURL
       this.topCoverURL = data.data.topCoverURL
+      this.lang = data.data.en ? '英文' : '中文'
       if (data.data.tag === 'head') {
         this.topCoverShow = true
       }
@@ -283,8 +291,8 @@ export default {
             tag: this.postForm.tag || '',
             abstract: this.postForm.abstract || '',
             author: this.postForm.author,
-            cn: this.postForm.cn,
-            en: this.postForm.en,
+            cn: this.lang === '中文',
+            en: this.lang === '英文',
             dateOfRelease: this.postForm.dateOfRelease
           }).then(response => {
             console.log(response)
