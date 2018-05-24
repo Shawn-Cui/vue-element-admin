@@ -4,10 +4,11 @@
     </el-button>
     <el-dialog append-to-body :visible.sync="dialogVisible">
       <el-upload class="editor-slide-upload" action="https://httpbin.org/post" :multiple="false" :file-list="fileList" :show-file-list="false"
-        list-type="picture-card" :on-remove="handleRemove" :on-success="handleSuccess" :before-upload="beforeUpload" :http-request="handleUpload">
-        <el-button size="small" type="primary">点击上传</el-button>
+        list-type="picture-card" :on-remove="handleRemove" :on-success="handleSuccess" :before-upload="beforeUpload" :http-request="handleUpload" v-loading="loading">
+        <img v-if="uploadStatus" :src="imgURL" class="imgURL">
+        <i v-else class="el-icon-plus coverURL-uploader-icon"></i>
       </el-upload>
-      <el-button @click="dialogVisible = false">取 消</el-button>
+      <el-button @click="handleCancel">取 消</el-button>
       <el-button type="primary" @click="handleSubmit">确 定</el-button>
     </el-dialog>
   </div>
@@ -29,6 +30,7 @@ export default {
       imgURL: '',
       uploadStatus: false,
       dialogVisible: false,
+      loading: false,
       listObj: {},
       fileList: []
     }
@@ -38,6 +40,7 @@ export default {
       return Object.keys(this.listObj).every(item => this.listObj[item].hasSuccess)
     },
     handleUpload(file) {
+      this.loading = true
       const me = this
       const img = new Image()
       const url = URL.createObjectURL(file.file)
@@ -49,12 +52,18 @@ export default {
           if (err) {
             console.log(err, '上传失败！')
           }
+          me.loading = false
           me.imgURL = url
           me.uploadStatus = true
         })
       }
     },
+    handleCancel() {
+      this.dialogVisible = false
+      this.loading = false
+    },
     handleSubmit() {
+      this.loading = false
       if (!this.uploadStatus) {
         this.$message('请等待图片上传成功 或 出现了网络问题，请刷新页面重新上传！')
         return
@@ -65,6 +74,7 @@ export default {
       this.dialogVisible = false
     },
     handleSuccess(response, file) {
+      console.log(response, file, this.listObj)
       // const uid = file.uid
       // const objKeyArr = Object.keys(this.listObj)
       // for (let i = 0, len = objKeyArr.length; i < len; i++) {
@@ -108,5 +118,9 @@ export default {
   .editor-slide-upload {
     margin-bottom: 20px;
   }
+}
+.imgURL {
+  width: 100%;
+  height: 100%;
 }
 </style>

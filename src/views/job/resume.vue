@@ -108,7 +108,6 @@ export default {
       const filter = {
         skip: (this.localPage - 1) * this.msg.pagNumber,
         limit: this.msg.pagNumber,
-        order: 'created DESC',
         where: {
           jobId: this.id
         }
@@ -135,8 +134,7 @@ export default {
     async searchResumes(search) {
       const filter = {
         skip: (this.localPage - 1) * this.msg.pagNumber,
-        limit: this.msg.pagNumber,
-        order: 'created DESC'
+        limit: this.msg.pagNumber
       }
       filter.where = search.where
 
@@ -145,7 +143,6 @@ export default {
       this.resumeList = res.data
       const totalRes = await axios.get('/api/Resumes/count', {
         params: {
-          order: 'dateOfRelease DESC',
           title: search
         }
       })

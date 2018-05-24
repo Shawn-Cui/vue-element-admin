@@ -96,7 +96,8 @@
                   :show-file-list="false"
                   :on-success="handleCoverSuccess"
                   :before-upload="beforeCoverUpload"
-                  :http-request="uploadCover">
+                  :http-request="uploadCover"
+                  :loading="coverLoading">
                   <img v-if="coverURL" :src="coverURL" class="coverURL">
                   <i v-else class="el-icon-plus coverURL-uploader-icon"></i>
                 </el-upload>
@@ -115,7 +116,8 @@
                   :show-file-list="false"
                   :on-success="handleTopCoverSuccess"
                   :before-upload="beforeTopCoverUpload"
-                  :http-request="uploadTopCover">
+                  :http-request="uploadTopCover"
+                  :loading="topCoverLoading">
                   <img v-if="topCoverURL" :src="topCoverURL" class="topCoverURL">
                   <i v-else class="el-icon-plus topCoverURL-uploader-icon"></i>
                 </el-upload>
@@ -179,6 +181,8 @@ export default {
     //   }
     // }
     return {
+      coverLoading: false,
+      topCoverLoading: false,
       coverURL: '',
       topCoverShow: false,
       postForm: Object.assign({}, defaultForm),
@@ -338,6 +342,7 @@ export default {
     },
     // 上传封面大图
     uploadCover(file) {
+      this.coverLoading = true
       const me = this
       const reader = new FileReader()
       reader.onload = function(evt) {
@@ -349,6 +354,7 @@ export default {
               if (err) {
                 console.log(err, '上传失败！')
               }
+              me.coverLoading = false
               me.coverURL = url
               me.postForm.coverURL = url
             })
@@ -367,6 +373,7 @@ export default {
     },
     // 上传置顶大图
     uploadTopCover(file) {
+      this.topCoverLoading = true
       const me = this
       const img = new Image()
       const url = URL.createObjectURL(file.file)
@@ -379,6 +386,7 @@ export default {
             if (err) {
               console.log(err, '上传失败！')
             }
+            me.topCoverLoading = false
             me.topCoverURL = url
             me.postForm.topCoverURL = url
           })
