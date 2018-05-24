@@ -72,18 +72,18 @@ export default {
             }
           },
           indicator: [
-            { name: 'Sales', max: 10000 },
-            { name: 'Administration', max: 20000 },
-            { name: 'Information Techology', max: 20000 },
-            { name: 'Customer Support', max: 20000 },
-            { name: 'Development', max: 20000 },
-            { name: 'Marketing', max: 20000 }
+            { name: 'PV', max: 10000 },
+            { name: 'UV', max: 20000 },
+            { name: '访问次数', max: 20000 },
+            { name: '新闻发布次数', max: 20000 },
+            { name: '职位发布次数', max: 20000 },
+            { name: '简历下载数', max: 20000 }
           ]
         },
         legend: {
           left: 'center',
           bottom: '10',
-          data: ['Allocated Budget', 'Expected Spending', 'Actual Spending']
+          data: ['3月份', '4月份', '5月份']
         },
         series: [{
           type: 'radar',
@@ -100,15 +100,15 @@ export default {
           data: [
             {
               value: [5000, 7000, 12000, 11000, 15000, 14000],
-              name: 'Allocated Budget'
+              name: '3月份'
             },
             {
               value: [4000, 9000, 15000, 15000, 13000, 11000],
-              name: 'Expected Spending'
+              name: '4月份'
             },
             {
               value: [5500, 11000, 12000, 15000, 12000, 12000],
-              name: 'Actual Spending'
+              name: '5月份'
             }
           ],
           animationDuration: animationDuration

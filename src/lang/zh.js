@@ -55,7 +55,7 @@ export default {
     theme: '换肤',
     clipboardDemo: 'Clipboard',
     i18n: '国际化',
-    changePassword: '修改密码',
+    changePassword: '个人中心',
     feedback: '信息收集',
     pageManage: '页面管理'
   },

@@ -2,11 +2,11 @@
   <div class="dashboard-editor-container">
     <!-- <github-corner></github-corner> -->
 
-    <!-- <panel-group @handleSetLineChartData="handleSetLineChartData"></panel-group>
+    <!-- <panel-group @handleSetLineChartData="handleSetLineChartData"></panel-group> -->
 
-    <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
+    <!-- <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :chart-data="lineChartData"></line-chart>
-    </el-row>
+    </el-row> -->
 
     <el-row :gutter="32">
       <el-col :xs="24" :sm="24" :lg="8">
@@ -26,7 +26,7 @@
       </el-col>
     </el-row>
 
-    <el-row :gutter="8">
+    <!-- <el-row :gutter="8">
       <el-col :xs="{span: 24}" :sm="{span: 24}" :md="{span: 24}" :lg="{span: 12}" :xl="{span: 12}" style="padding-right:8px;margin-bottom:30px;">
         <transaction-table></transaction-table>
       </el-col>
@@ -37,7 +37,7 @@
         <box-card></box-card>
       </el-col>
     </el-row> -->
-    <h1>欢迎来到博郡后台管理系统！</h1>
+    <!-- <h1>欢迎来到博郡后台管理系统！</h1> -->
 
   </div>
 </template>
@@ -46,9 +46,9 @@
 // import GithubCorner from '@/components/GithubCorner'
 // import PanelGroup from './components/PanelGroup'
 // import LineChart from './components/LineChart'
-// import RaddarChart from './components/RaddarChart'
-// import PieChart from './components/PieChart'
-// import BarChart from './components/BarChart'
+import RaddarChart from './components/RaddarChart'
+import PieChart from './components/PieChart'
+import BarChart from './components/BarChart'
 // import TransactionTable from './components/TransactionTable'
 // import TodoList from './components/TodoList'
 // import BoxCard from './components/BoxCard'
@@ -78,9 +78,9 @@ export default {
     // GithubCorner,
     // PanelGroup,
     // LineChart,
-    // RaddarChart,
-    // PieChart,
-    // BarChart,
+    RaddarChart,
+    PieChart,
+    BarChart
     // TransactionTable,
     // TodoList,
     // BoxCard
@@ -101,7 +101,7 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
 .dashboard-editor-container {
   text-align: center;
-  margin-top: 120px;
+  // margin-top: 120px;
   padding: 32px;
   // background-color: rgb(240, 242, 245);
   .chart-wrapper {

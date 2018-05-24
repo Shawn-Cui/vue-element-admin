@@ -17,7 +17,7 @@
       </el-select> -->
       <el-button class="filter-item" type="primary" v-waves icon="el-icon-search" @click="handleFilter">{{$t('table.search')}}</el-button>
       <el-button class="filter-item" style="margin-left: 10px;" @click="addBox = true" type="primary" icon="el-icon-edit">{{$t('table.add')}}</el-button>
-      <el-button class="filter-item" type="primary" :loading="downloadLoading" v-waves icon="el-icon-download" @click="handleDownload">{{$t('table.export')}}</el-button>
+      <!-- <el-button class="filter-item" type="primary" :loading="downloadLoading" v-waves icon="el-icon-download" @click="handleDownload">{{$t('table.export')}}</el-button> -->
       <!-- <el-checkbox class="filter-item" style='margin-left:15px;' @change='tableKey=tableKey+1' v-model="showReviewer">{{$t('table.reviewer')}}</el-checkbox> -->
     </div>
 
@@ -75,7 +75,7 @@
         <template slot-scope="scope">
           <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">{{$t('table.edit')}}
           </el-button>
-          <el-button size="mini" type="success">{{$t('table.view')}}
+          <el-button size="mini" type="success" @click="handleView(scope.row)">{{$t('table.view')}}
           </el-button>
           <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">{{$t('table.delete')}}
           </el-button>
@@ -363,6 +363,14 @@ export default {
       }).catch(() => {
         this.$message({ type: 'info', message: '已取消删除' })
       })
+    },
+    handleView(row) {
+      const param = {
+        id: row.id,
+        title: row.title,
+        dateOfRelease: row.dateOfRelease
+      }
+      window.open('http://115.159.86.224/#/newsDetail/' + JSON.stringify(param))
     },
     handleUpdate(row) {
       this.$router.replace({

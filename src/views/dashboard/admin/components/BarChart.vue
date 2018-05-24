@@ -78,25 +78,46 @@ export default {
           }
         }],
         series: [{
-          name: 'pageA',
+          name: '首页',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
           data: [79, 52, 200, 334, 390, 330, 220],
           animationDuration
         }, {
-          name: 'pageB',
+          name: '新闻',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
           data: [80, 52, 200, 334, 390, 330, 220],
           animationDuration
         }, {
-          name: 'pageC',
+          name: '招聘',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
           data: [30, 52, 200, 334, 390, 330, 220],
+          animationDuration
+        }, {
+          name: '信息收集',
+          type: 'bar',
+          stack: 'vistors',
+          barWidth: '60%',
+          data: [30, 52, 200, 334, 390, 330, 220],
+          animationDuration
+        }, {
+          name: '页面管理',
+          type: 'bar',
+          stack: 'vistors',
+          barWidth: '60%',
+          data: [10, 25, 8, 30, 28, 18, 35],
+          animationDuration
+        }, {
+          name: '个人中心',
+          type: 'bar',
+          stack: 'vistors',
+          barWidth: '60%',
+          data: [0, 2, 1, 0, 0, 0, 3],
           animationDuration
         }]
       })

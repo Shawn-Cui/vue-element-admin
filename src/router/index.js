@@ -50,15 +50,15 @@ export const constantRouterMap = [
     alwaysShow: true, // will always show the root menu
     meta: {
       title: 'news',
-      icon: 'clipboard'
+      icon: 'form'
     },
     children: [{
       path: 'index',
       component: _import('news/Index'),
       name: 'news',
-      meta: { title: 'news', icon: 'clipboard', noCache: true }
+      meta: { title: 'news', icon: 'form', noCache: true }
     },
-    { path: 'edit', component: _import('news/edit'), name: 'news.edit', meta: { title: 'edit', icon: 'table' }}]
+    { path: 'edit', component: _import('news/edit'), name: 'news.edit', hidden: true, meta: { title: 'edit', icon: 'form' }}]
   },
 
   {
@@ -76,8 +76,8 @@ export const constantRouterMap = [
       name: 'job',
       meta: { title: 'job', icon: 'clipboard', noCache: true }
     },
-    { path: 'edit', component: _import('job/edit'), name: 'job.edit', meta: { title: 'edit', icon: 'table' }},
-    { path: 'resume', component: _import('job/resume'), name: 'job.resume', meta: { title: 'resume', icon: 'table' }}]
+    { path: 'edit', component: _import('job/edit'), name: 'job.edit', hidden: true, meta: { title: 'edit', icon: 'table' }},
+    { path: 'resume', component: _import('job/resume'), name: 'job.resume', hidden: true, meta: { title: 'resume', icon: 'table' }}]
   },
 
   {
@@ -87,7 +87,7 @@ export const constantRouterMap = [
       path: 'index',
       component: _import('feedback/index'),
       name: 'feedback',
-      meta: { title: 'feedback', icon: 'clipboard', noCache: true }
+      meta: { title: 'feedback', icon: 'message', noCache: true }
     }]
   },
 
@@ -98,7 +98,7 @@ export const constantRouterMap = [
       path: 'index',
       component: _import('pageManage/index'),
       name: 'pageManage',
-      meta: { title: 'pageManage', icon: 'clipboard', noCache: true }
+      meta: { title: 'pageManage', icon: 'component', noCache: true }
     }]
   },
 
@@ -109,7 +109,55 @@ export const constantRouterMap = [
       path: 'index',
       component: _import('changePassword/index'),
       name: 'changePassword',
-      meta: { title: 'changePassword', icon: 'clipboard', noCache: true }
+      meta: { title: 'changePassword', icon: 'user', noCache: true }
+    }]
+  }
+]
+
+export const jobRouterMap = [
+  { path: '/login', component: _import('login/index'), hidden: true },
+  { path: '/authredirect', component: _import('login/authredirect'), hidden: true },
+  { path: '/404', component: _import('errorPage/404'), hidden: true },
+  { path: '/401', component: _import('errorPage/401'), hidden: true },
+  {
+    path: '',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [{
+      path: 'dashboard',
+      component: _import('dashboard/index'),
+      name: 'dashboard',
+      meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+    }]
+  },
+
+  {
+    path: '/job',
+    component: Layout,
+    redirect: '/job/index',
+    alwaysShow: true, // will always show the root menu
+    meta: {
+      title: 'job',
+      icon: 'clipboard'
+    },
+    children: [{
+      path: 'index',
+      component: _import('job/Index'),
+      name: 'job',
+      meta: { title: 'job', icon: 'clipboard', noCache: true }
+    },
+    { path: 'edit', component: _import('job/edit'), name: 'job.edit', hidden: true, meta: { title: 'edit', icon: 'table' }},
+    { path: 'resume', component: _import('job/resume'), name: 'job.resume', hidden: true, meta: { title: 'resume', icon: 'table' }}]
+  },
+
+  {
+    path: '/changePassword',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: _import('changePassword/index'),
+      name: 'changePassword',
+      meta: { title: 'changePassword', icon: 'user', noCache: true }
     }]
   }
 ]

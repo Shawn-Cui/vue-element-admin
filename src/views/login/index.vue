@@ -73,7 +73,7 @@ export default {
     // }
     return {
       loginForm: {
-        username: 'Bob',
+        username: 'admin',
         password: 'opensesame'
       },
       loginRules: {

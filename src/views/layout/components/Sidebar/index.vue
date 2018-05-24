@@ -17,7 +17,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import SidebarItem from './SidebarItem'
-import { constantRouterMap } from '@/router'
+import { constantRouterMap, jobRouterMap } from '@/router'
 
 export default {
   components: { SidebarItem },
@@ -34,6 +34,12 @@ export default {
     console.log(constantRouterMap)
     return {
       routes: constantRouterMap
+    }
+  },
+  created() {
+    const username = localStorage.getItem('BDUsername')
+    if (username === 'hr') {
+      this.routes = jobRouterMap
     }
   }
 }

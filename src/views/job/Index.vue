@@ -10,22 +10,17 @@
 
     <el-table :data="jobList" v-loading="listLoading" element-loading-text="给我一点时间" border fit highlight-current-row
       style="width: 100%">
-      <!-- <el-table-column align="center" :label="$t('table.id')" width="65">
-        <template slot-scope="scope">
-          <span>{{scope.row.id}}</span>
-        </template>
-      </el-table-column> -->
-      <el-table-column width="150px" align="center" :label="$t('table.date')">
+      <el-table-column width="250px" align="center" :label="$t('table.date')">
         <template slot-scope="scope">
           <span>{{scope.row.created | formatDateTime}}</span>
         </template>
       </el-table-column>
-      <el-table-column min-width="150px" :label="$t('table.job')">
+      <el-table-column min-width="250px" :label="$t('table.job')">
         <template slot-scope="scope">
           <span class="link-type" @click="handleUpdate(scope.row)">{{scope.row.name}}</span>
         </template>
       </el-table-column>
-      <el-table-column width="150px" align="center" :label="$t('table.recruitNumber')">
+      <el-table-column width="250px" align="center" :label="$t('table.recruitNumber')">
         <template slot-scope="scope">
           <span>{{scope.row.count}}</span>
         </template>

@@ -1,6 +1,6 @@
 // import { loginByUsername, logout, getUserInfo } from '@/api/login'
 import { loginByUsername, logout } from '@/api/login'
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import { getToken, setToken, setUsername, removeToken } from '@/utils/auth'
 
 const user = {
   state: {
@@ -57,6 +57,7 @@ const user = {
           commit('SET_AVATAR', 'http://bordrin-1252042681.cossh.myqcloud.com/logo.jpg')
           commit('SET_ROLES', ['admin'])
           setToken(response.data.id)
+          setUsername(username)
           resolve()
         }).catch(error => {
           reject(error)

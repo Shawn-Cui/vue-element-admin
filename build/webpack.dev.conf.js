@@ -54,8 +54,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: 'index.html',
       inject: true,
-      favicon: resolve('favicon.ico'),
-      title: 'vue-element-admin',
+      title: 'Bordrin',
       path: config.dev.assetsPublicPath + config.dev.assetsSubDirectory
     }),
   ]

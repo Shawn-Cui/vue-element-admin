@@ -5,6 +5,11 @@
     </div>
     <el-table :data="feedbackList" v-loading="listLoading" element-loading-text="给我一点时间" border fit highlight-current-row
       style="width: 100%">
+      <el-table-column width="250px" type="index" align="center" :label="$t('table.id')">
+        <!-- <template slot-scope="scope">
+          <span>{{scope.row.index}}</span>
+        </template> -->
+      </el-table-column>
       <el-table-column width="250px" align="center" :label="$t('table.date')">
         <template slot-scope="scope">
           <span>{{scope.row.created | formatDateTime}}</span>
@@ -26,7 +31,7 @@
 <script>
 import axios from 'axios'
 import waves from '@/directive/waves' // 水波纹指令
-import { parseTime } from '@/utils'
+import moment from 'moment'
 import paging from '@/components/Paging/paging'
 
 export default {
@@ -83,9 +88,10 @@ export default {
     handleDownload() {
       this.downloadLoading = true
       import('@/vendor/Export2Excel').then(excel => {
-        const tHeader = ['timestamp', 'title', 'type', 'importance', 'status']
-        const filterVal = ['timestamp', 'title', 'type', 'importance', 'status']
-        const data = this.formatJson(filterVal, this.list)
+        const tHeader = ['id', 'created', 'content']
+        const filterVal = ['id', 'created', 'content']
+        console.log(this.feedbackList)
+        const data = this.formatJson(filterVal, this.feedbackList)
         excel.export_json_to_excel({
           header: tHeader,
           data,
@@ -96,8 +102,8 @@ export default {
     },
     formatJson(filterVal, jsonData) {
       return jsonData.map(v => filterVal.map(j => {
-        if (j === 'timestamp') {
-          return parseTime(v[j])
+        if (j === 'created') {
+          return moment.unix(parseInt(v[j]) / 1000).format('YYYY-MM-DD HH:mm')
         } else {
           return v[j]
         }
