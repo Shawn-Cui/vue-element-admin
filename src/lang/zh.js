@@ -106,7 +106,7 @@ export default {
     search: '搜索',
     add: '添加',
     export: '导出',
-    download: '下载简历',
+    download: '下载',
     job: '岗位',
     recruitNumber: '招聘人数',
     reviewer: '审核人',

@@ -15,19 +15,19 @@
       </el-table-column> -->
       <el-table-column width="350px" align="center" :label="$t('table.downloadURL')">
         <template slot-scope="scope">
-          <span>{{scope.row.downloadURL}}</span>
+          <span>{{scope.row.downloadUrl}}</span>
         </template>
       </el-table-column>
       <el-table-column width="350px" align="center" :label="$t('table.tag')">
         <template slot-scope="scope">
-          <span>{{scope.row.tag}}</span>
+          <span>{{scope.row.tag | tagFilter}}</span>
         </template>
       </el-table-column>
       <el-table-column align="center" :label="$t('table.actions')" min-width="230" class-name="small-padding fixed-width">
         <template slot-scope="scope">
-          <el-button type="primary" size="mini">{{$t('table.edit')}}
-          </el-button>
-          <el-button size="mini" type="success">{{$t('table.download')}}
+          <!-- <el-button type="primary" size="mini">{{$t('table.edit')}}
+          </el-button> -->
+          <el-button size="mini" type="success" :loading="downloadLoading" @click="handleDownload(scope.row)">{{$t('table.download')}}
           </el-button>
           <!-- <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">{{$t('table.delete')}}
           </el-button> -->
@@ -52,6 +52,15 @@ export default {
   name: 'complexTable',
   directives: {
     waves
+  },
+  filters: {
+    tagFilter: function(value) {
+      if (value === '0') {
+        return '未下载'
+      } else {
+        return '已下载'
+      }
+    }
   },
   data() {
     return {
@@ -124,7 +133,7 @@ export default {
     handleFilter() {
       const filter = {
         where: {
-          title: {
+          downloadUrl: {
             like: '%' + this.search + '%'
           }
         }
@@ -207,18 +216,16 @@ export default {
         }
       })
     },
-    handleDownload() {
+    handleDownload(row) {
       this.downloadLoading = true
-      import('@/vendor/Export2Excel').then(excel => {
-        const tHeader = ['timestamp', 'title', 'type', 'importance', 'status']
-        const filterVal = ['timestamp', 'title', 'type', 'importance', 'status']
-        const data = this.formatJson(filterVal, this.list)
-        excel.export_json_to_excel({
-          header: tHeader,
-          data,
-          filename: 'table-list'
-        })
+      axios.put('/api/Resumes/' + row.id, {
+        downloadUrl: row.downloadUrl,
+        tag: '1',
+        jobId: row.jobId
+      }).then((response) => {
+        window.open(row.downloadUrl)
         this.downloadLoading = false
+        this.getList()
       })
     },
     formatJson(filterVal, jsonData) {
