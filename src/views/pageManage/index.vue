@@ -60,6 +60,102 @@
         </el-col>
       </el-row>
 
+      <el-row :gutter="60">
+        <el-col :span="12">
+          <label for="home3">首页3</label>
+          <el-upload
+            class="home-uploader"
+            action="https://example.com/"
+            :show-file-list="false"
+            :http-request="uploadHome3">
+            <img :src="home3" class="homeImg">
+          </el-upload>
+        </el-col>
+
+        <el-col :span="12">
+          <label for="home3En">首页3英文</label>
+          <el-upload
+            class="home-uploader"
+            action="https://example.com/"
+            :show-file-list="false"
+            :http-request="uploadHome3En">
+            <img :src="home3En" class="homeImg">
+          </el-upload>
+        </el-col>
+      </el-row>
+
+      <el-row :gutter="60">
+        <el-col :span="12">
+          <label for="home4">首页4</label>
+          <el-upload
+            class="home-uploader"
+            action="https://example.com/"
+            :show-file-list="false"
+            :http-request="uploadHome4">
+            <img :src="home4" class="homeImg">
+          </el-upload>
+        </el-col>
+
+        <el-col :span="12">
+          <label for="home4En">首页4英文</label>
+          <el-upload
+            class="home-uploader"
+            action="https://example.com/"
+            :show-file-list="false"
+            :http-request="uploadHome4En">
+            <img :src="home4En" class="homeImg">
+          </el-upload>
+        </el-col>
+      </el-row>
+
+      <el-row :gutter="60">
+        <el-col :span="12">
+          <label for="home5">首页5</label>
+          <el-upload
+            class="home-uploader"
+            action="https://example.com/"
+            :show-file-list="false"
+            :http-request="uploadHome5">
+            <img :src="home5" class="homeImg">
+          </el-upload>
+        </el-col>
+
+        <el-col :span="12">
+          <label for="home5En">首页5英文</label>
+          <el-upload
+            class="home-uploader"
+            action="https://example.com/"
+            :show-file-list="false"
+            :http-request="uploadHome5En">
+            <img :src="home5En" class="homeImg">
+          </el-upload>
+        </el-col>
+      </el-row>
+
+      <el-row :gutter="60">
+        <el-col :span="12">
+          <label for="home6">首页6</label>
+          <el-upload
+            class="home-uploader"
+            action="https://example.com/"
+            :show-file-list="false"
+            :http-request="uploadHome6">
+            <img :src="home6" class="homeImg">
+          </el-upload>
+        </el-col>
+
+        <el-col :span="12">
+          <label for="home6En">首页6英文</label>
+          <el-upload
+            class="home-uploader"
+            action="https://example.com/"
+            :show-file-list="false"
+            :http-request="uploadHome6En">
+            <img :src="home6En" class="homeImg">
+          </el-upload>
+        </el-col>
+      </el-row>
+
       <el-row style="margin: 30px 50px">
         <el-form :inline="true" :model="homeForm" class="demo-form-inline">
           <el-form-item label="中文">
@@ -368,6 +464,14 @@ export default {
       home1En: 'http://bordrin-1252042681.cossh.myqcloud.com/home1En.png',
       home2: 'http://bordrin-1252042681.cossh.myqcloud.com/home2.png',
       home2En: 'http://bordrin-1252042681.cossh.myqcloud.com/home2En.png',
+      home3: 'http://bordrin-1252042681.cossh.myqcloud.com/home3.png',
+      home3En: 'http://bordrin-1252042681.cossh.myqcloud.com/home3En.png',
+      home4: 'http://bordrin-1252042681.cossh.myqcloud.com/home4.png',
+      home4En: 'http://bordrin-1252042681.cossh.myqcloud.com/home4En.png',
+      home5: 'http://bordrin-1252042681.cossh.myqcloud.com/home5.png',
+      home5En: 'http://bordrin-1252042681.cossh.myqcloud.com/home5En.png',
+      home6: 'http://bordrin-1252042681.cossh.myqcloud.com/home6.png',
+      home6En: 'http://bordrin-1252042681.cossh.myqcloud.com/home6En.png',
       news: 'http://bordrin-1252042681.cossh.myqcloud.com/news.png',
       newsEn: 'http://bordrin-1252042681.cossh.myqcloud.com/newsEn.png',
       about: 'http://bordrin-1252042681.cossh.myqcloud.com/about-us.png',
@@ -523,6 +627,30 @@ export default {
     },
     uploadHome2En(file) {
       this.uploadHome(file, 'home2En')
+    },
+    uploadHome3(file) {
+      this.uploadHome(file, 'home3')
+    },
+    uploadHome3En(file) {
+      this.uploadHome(file, 'home3En')
+    },
+    uploadHome4(file) {
+      this.uploadHome(file, 'home4')
+    },
+    uploadHome4En(file) {
+      this.uploadHome(file, 'home4En')
+    },
+    uploadHome5(file) {
+      this.uploadHome(file, 'home5')
+    },
+    uploadHome5En(file) {
+      this.uploadHome(file, 'home5En')
+    },
+    uploadHome6(file) {
+      this.uploadHome(file, 'home6')
+    },
+    uploadHome6En(file) {
+      this.uploadHome(file, 'home6En')
     },
     uploadHome(file, fileName) {
       console.log(file, fileName)
