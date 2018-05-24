@@ -38,7 +38,7 @@ export default {
   },
   created() {
     const username = localStorage.getItem('BDUsername')
-    if (username === 'John') {
+    if (username === 'HR') {
       this.routes = jobRouterMap
     }
   }
