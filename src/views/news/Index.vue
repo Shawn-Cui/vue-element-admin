@@ -218,7 +218,7 @@ export default {
       const filter = {
         where: {
           title: {
-            like: '%' + this.search + '%'
+            like: this.search
           }
         }
       }
