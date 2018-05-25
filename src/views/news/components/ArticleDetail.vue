@@ -217,9 +217,6 @@ export default {
         ],
         abstract: [
           { required: true, message: '摘要不能为空', trigger: 'blur' }
-        ],
-        cn: [
-          { required: true, message: '不能为空', trigger: 'blur' }
         ]
       }
     }
