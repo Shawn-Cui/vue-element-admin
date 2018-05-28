@@ -63,7 +63,6 @@ You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) l
 - Dynamic sidebar (supports multi-level routing)
 - Dynamic breadcrumb
 - I18n
-- Customizable theme
 - Tags-view(Tab page Support right-click operation)
 - Rich text editor
 - Markdown editor
