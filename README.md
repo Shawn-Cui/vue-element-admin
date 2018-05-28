@@ -72,7 +72,6 @@ You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) l
 - Svg Sprite
 - Dashboard
 - Mock data
-- Echarts
 - Clipboard
 - 401/404 error page
 - Error log
